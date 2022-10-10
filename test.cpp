@@ -1,21 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
-const long long int M = 998244353;
-int main() {
+bool solve()
+{
+    string x,y;
+    cin>>x>>y;
+    int len=x.size();
+    for(int i=0;i<len;i++)
+    {
+        if(x[i]=='*' || y[i]=='*')continue;
+        if(x[i]!=y[i])
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+int main()
+{
     int t;
     cin>>t;
-    while(t--){
-        string s;
-        cin>>s;
-        int ans=1,prev=1,prev2=1;
-        for(int i=1;i<s.size();i++){
-            if(s[i]!=s[i-1]){
-                ans=prev+prev2;
-            }
-            prev2=prev;
-            prev=ans;
-        }
-        cout<<ans<<endl;
+    while(t--)
+    {
+    if(solve())cout<<"Yes";
+    else cout<<"No";
     }
     return 0;
 }
