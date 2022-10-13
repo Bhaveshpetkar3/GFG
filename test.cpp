@@ -1,28 +1,21 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-bool solve()
-{
-    string x,y;
-    cin>>x>>y;
-    int len=x.size();
-    for(int i=0;i<len;i++)
-    {
-        if(x[i]=='*' || y[i]=='*')continue;
-        if(x[i]!=y[i])
-        {
-            return 0;
-        }
-    }
-    return 1;
-}
 int main()
 {
-    int t;
-    cin>>t;
-    while(t--)
+    vector <int> qwe;
+    vector <int> :: iterator ptr;
+    cout<<"Enter the size of the array:";
+    int n,x;
+    cin>>n;
+    for(int i=0;i<n;i++)
     {
-    if(solve())cout<<"Yes";
-    else cout<<"No";
+        cin>>x;
+        qwe.push_back(x);
+    }
+    cout<<"\nThe elements of the array are : ";
+    for(ptr=qwe.begin();ptr<qwe.end();ptr++)
+    {
+        cout<<*ptr<<" ";
     }
     return 0;
 }
